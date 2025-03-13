@@ -1,0 +1,551 @@
+/* ----------------------------------------------- HERO SECTION --------------------------------------------------------- */
+/* General Styling */
+.btn-secondary {
+  width: fit-content;
+}
+section .fa-solid {
+  color: var(--text);
+}
+
+/* Hero Slider Container */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: calc(95vh - var(--nav-height) - var(--info-strip-height));
+  overflow: hidden;
+}
+
+/* Individual Slide */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  z-index: 1;
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover the entire slide */
+}
+
+/* Slide Text */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+}
+
+.text h1 {
+  color: var(--white);
+}
+.text p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  width: 70%;
+}
+
+/* Button Style */
+.hero-slider .btn-secondary {
+  display: block;
+  width: fit-content;
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+/* Navigation Pills */
+.nav-pills {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.pill {
+  width: 55px;
+  height: 10px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pill.active {
+  background: white;
+}
+
+/* ----------------------------------------------- WHY CHOOSE --------------------------------------------------------- */
+.choose {
+  position: relative;
+  width: 100%;
+  background-color: var(--primary);
+  min-height: 30vh;
+  padding: 5%;
+  margin-bottom: 25rem;
+}
+.choose h2 {
+  text-align: center;
+  width: 100%;
+  color: var(--white);
+}
+.choose .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 0 5%;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.choose .cards .card {
+  padding: 2rem 5%;
+  background-color: var(--white);
+  border-radius: 25px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 300ms;
+}
+.choose .cards .card:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+.choose .cards .card .btn-secondary {
+  margin: auto;
+}
+.choose .cards .card:hover .btn-secondary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+.choose .cards .card:hover .fa-solid {
+  color: white;
+}
+.choose .cards .card h3 {
+  margin: auto;
+  width: 90%;
+}
+.choose .cards .card p {
+  margin: 1rem auto;
+  width: 70%;
+}
+.choose .cards .card .fa-solid {
+  font-size: calc(var(--p) + 2rem);
+  margin-bottom: 1rem;
+}
+
+/* ----------------------------------------------- ABOUT US --------------------------------------------------------- */
+.about {
+  position: relative;
+  padding: 5%;
+  width: 100%;
+  margin: 5rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.about .left {
+  width: 50%;
+}
+.about .left h2 {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.about .left p {
+  margin-bottom: 1rem;
+}
+.about .right {
+  width: 45%;
+  height: 80vh;
+}
+.about .right img {
+  scale: 1.2;
+  height: 100%;
+}
+
+/* ----------------------------------------------- SERVICES --------------------------------------------------------- */
+.services {
+  position: relative;
+  width: 100%;
+  background-color: var(--primary);
+  min-height: 30vh;
+  padding: 5%;
+  margin-bottom: 40rem;
+}
+.services h2 {
+  text-align: center;
+  width: 100%;
+  color: var(--white);
+}
+.services .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 0 5%;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.services .cards .card {
+  /* padding: 2rem 5%; */
+  padding-bottom: 2rem;
+  background-color: var(--white);
+  border-radius: 25px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 300ms;
+  overflow: hidden;
+}
+.services .cards .card:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+.services .cards .card .btn-secondary {
+  margin: auto;
+}
+.services .cards .card:hover .btn-secondary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+.services .cards .card h3 {
+  margin: auto;
+  width: 90%;
+}
+.services .cards .card p {
+  margin: 1rem auto;
+  width: 70%;
+}
+.services .cards .card .image-container {
+  width: 100%;
+  margin: 0;
+  height: 30vh;
+  margin-bottom: 2rem;
+}
+
+/* ----------------------------------------------- OUR APPROACH --------------------------------------------------------- */
+.approach {
+  width: 100%;
+  padding: 5%;
+  text-align: center;
+  background-color: var(--grey);
+}
+.approach h2 {
+  margin-bottom: 2rem;
+}
+.approach p {
+  width: 60%;
+  margin: auto;
+}
+
+/* ----------------------------------------------- CONTACT US --------------------------------------------------------- */
+.contact-section {
+  width: 100%;
+  position: relative;
+  margin: 5rem 0;
+}
+.contact-section .form-section {
+  width: 100%;
+  background: url("../images/home/contact-image.webp") no-repeat center center /
+    cover;
+  padding: 5% 0;
+}
+.contact-section .form-section .title h2 {
+  color: var(--white);
+}
+.contact-section .form-section .title h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%;
+}
+.contact-section .form-section .title p {
+  text-align: center;
+  width: 40%;
+  margin: 1rem auto;
+  color: var(--white);
+}
+.contact-section .form-section .form {
+  width: 70%;
+  margin: 0 auto;
+}
+.contact-section .form-section .form .input {
+  width: 100%;
+  margin-bottom: 1rem;
+  position: relative;
+  background-color: var(--white);
+  padding: 1rem 0.75rem;
+  border-radius: 10px;
+}
+.contact-section .form-section .form .input input,
+.contact-section .form-section .form .input textarea {
+  border: none;
+  outline: none;
+  width: 80%;
+}
+.contact-section .form-section .form .input .error {
+  color: red;
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+}
+.contact-section .form-section .form .contact-email {
+  column-gap: 1rem;
+}
+.contact-section .form-section .form .submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  background-color: var(--primary);
+  border: 3px solid var(--primary);
+}
+.contact-section .contact-details .details {
+  width: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-section .contact-details .details .contacts {
+  width: 100%;
+  padding: 15% 5% 5% 15%;
+  color: var(--white);
+  background-color: var(--secondary);
+  align-self: center;
+}
+.contact-section .contact-details .details .contacts div {
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.contact-section .contact-details .details .contacts .fa-solid {
+  color: var(--primary);
+  margin-right: 1rem;
+  font-size: calc(var(--p) + 0.5rem);
+}
+.contact-section .contact-details .details .operating-hours {
+  padding: 2rem 0;
+  background-color: var(--primary);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+}
+.contact-section .contact-details .map {
+  width: 70%;
+  display: flex;
+  overflow: hidden;
+}
+.contact-section .contact-details .map iframe {
+  width: 100%;
+  height: 470px !important;
+}
+
+/* ----------------------------------------------- MEDIA QUERIES --------------------------------------------------------- */
+
+@media screen and (max-width: 1024px) {
+  .hero .info {
+    width: 70%;
+  }
+  .hero .info p {
+    width: 75%;
+  }
+  .choose {
+    margin-bottom: 40rem;
+  }
+  .services {
+    margin-bottom: 70rem;
+  }
+  .faq .my-accordion .open {
+    height: 105px;
+  }
+  .contact-section .contact-details .map iframe {
+    width: 100%;
+    height: 445px !important;
+  }
+}
+
+/* 768px */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 3% 5%;
+  }
+  .hero .get-started {
+    top: 93%;
+    padding: 0.5rem 1rem;
+  }
+  .about {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+  .about .right {
+    width: 100%;
+  }
+  .about .left {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .services {
+    margin-bottom: 60rem;
+  }
+  .subscribe .info .input {
+    width: 100%;
+  }
+  .faq {
+    padding: 3rem;
+    width: 100%;
+  }
+  .faq .my-accordion .open {
+    height: 75px;
+  }
+  .contact-section .contact-details .map iframe {
+    width: 100%;
+    height: 390px !important;
+  }
+}
+
+/* 550px */
+@media screen and (max-width: 550px) {
+  .approach h2::after,
+  .about .info h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+  }
+  .text {
+    left: 0;
+    text-align: center;
+    padding: 0 5%;
+  }
+  .text p {
+    margin: 1rem auto;
+  }
+  .hero-slider .btn-secondary {
+    margin: auto;
+  }
+  .choose {
+    margin-bottom: 57rem;
+  }
+  .about .left h2 {
+    text-align: center;
+  }
+  .services {
+    margin-bottom: 82rem;
+  }
+  .approach p {
+    width: 80%;
+  }
+  .faq .intro h2::after {
+    width: 20%;
+  }
+  .faq .my-accordion .menu {
+    font-size: var(--p);
+  }
+  .faq .my-accordion .open {
+    font-size: var(--p);
+    height: 110px;
+  }
+  .faq .see-more {
+    width: 65%;
+  }
+  .contact-section .form-section .form {
+    width: 90%;
+  }
+  .contact-section .form-section .title p {
+    width: 90%;
+  }
+  .contact-section .form-section .form .contact-email {
+    padding: 0;
+  }
+  .contact-section .form-section .form .submit-btn {
+    justify-content: center;
+    width: 100%;
+  }
+  .contact-section .contact-details {
+    padding: 0;
+  }
+  .contact-section .contact-details .contacts p {
+    width: fit-content;
+    text-align: left;
+  }
+  .contact-section .contact-details .details {
+    width: 100%;
+  }
+  .contact-section .contact-details .map {
+    width: 100%;
+  }
+}
+
+/* 425px */
+@media screen and (max-width: 425px) {
+  .nav-pills{
+    bottom: 20px;
+  }
+  .choose .cards {
+    top: 50%;
+  }
+  .services {
+    margin-bottom: 87rem;
+  }
+  .services .cards {
+    top: 50%;
+  }
+  .approach p {
+    width: 100%;
+  }
+  .faq {
+    padding: 5%;
+  }
+  .faq .intro h2::after {
+    width: 40%;
+  }
+  .faq .my-accordion .open {
+    height: auto;
+  }
+}
+
+/* 375px */
+@media screen and (max-width: 375px){
+  .services {
+    margin-bottom: 95rem;
+  }
+}

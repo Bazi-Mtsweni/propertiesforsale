@@ -1,0 +1,16 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Redirect "/views/about.php" to "/about"
+RewriteCond %{THE_REQUEST} \s/views/(.+?)\.php[\s] [NC]
+RewriteRule ^ /%1 [R=301,NE,L]
+
+# Rewrite "/about" to "/views/about.php"
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/?$ views/$1.php [NC,L]
+AddType video/mp4 mp4
+RewriteCond %{HTTP_HOST} ^propertiesforsaleza\.co\.za$
+RewriteRule ^(.*)$ "https\:\/\/www\.propertiesforsaleza\.co\.za\/$1" [R=301,L]
